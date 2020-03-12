@@ -7,15 +7,20 @@
   <body>
     <div class="container">
       <h1>Etch-a-Sketch</h1>
+      <div class="change-size">
+        <button id="sizeChanger">CHANGE SIZE!</button>
+      </div>
       <div class="canvas"></div>
     </div>
   </body>
   <script>
-    let canvas  = document.querySelector('.canvas');
-    drawGrid(canvas);
+    const SEL_CANVAS  = document.querySelector('.canvas');
+    const SEL_BUTTON = document.querySelector('#sizeChanger');
 
+    drawGrid();
+    SEL_BUTTON.addEventListener('click', handleButtonClick);
 
-    function drawGrid(canvas, n = 16) {
+    function drawGrid(n = 16) {
       for(let i = 0; i < n; i++) {
         let row = document.createElement('div');
         row.classList.add('row');
@@ -26,8 +31,18 @@
           row.appendChild(cell);
         }
 
-        canvas.appendChild(row);
+        SEL_CANVAS.appendChild(row);
       }
+    }
+
+    function handleButtonClick(e) {
+      let size = prompt('How many squares per side?');
+      resetGrid();
+      drawGrid(size);
+    }
+
+    function resetGrid() {
+      SEL_CANVAS.innerHTML = '';
     }
   </script>
 </html>

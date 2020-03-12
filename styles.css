@@ -24,3 +24,15 @@ h1{
   width: fit-content;
   margin: 0 auto;
 }
+
+.change-size {
+  width: fit-content;
+  margin: 0px auto 20px auto;
+}
+
+.change-size > button {
+  background-color: whitesmoke;
+  height: 30px;
+  border-color: darkblue;
+  color: darkblue;
+}
