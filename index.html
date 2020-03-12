@@ -28,6 +28,7 @@
         for(let j = 0; j < n; j++) {
           let cell = document.createElement('div');
           cell.classList.add('cell');
+          cell.addEventListener('mouseover', handleCellHover);
           row.appendChild(cell);
         }
 
@@ -43,6 +44,15 @@
 
     function resetGrid() {
       SEL_CANVAS.innerHTML = '';
+    }
+
+    function handleCellHover() {
+      if (this.classList.contains("filled")) {
+        this.classList.remove("filled");
+      } else {
+        this.classList.add("filled");
+      }
+      console.log(this);
     }
   </script>
 </html>

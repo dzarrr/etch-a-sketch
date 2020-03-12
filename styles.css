@@ -20,6 +20,10 @@ h1{
   display: flex;
 }
 
+.filled {
+  background-color: darkblue;
+}
+
 .canvas{
   width: fit-content;
   margin: 0 auto;
