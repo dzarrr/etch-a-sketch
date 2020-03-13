@@ -10,14 +10,15 @@ h1{
 }
 
 .cell {
-  width: 30px;
-  height: 30px;
+  display: block;
+  flex: 1;
   background-color: whitesmoke;
   outline: solid 0.5px darkblue;
 }
 
 .row {
   display: flex;
+  flex: 1;
 }
 
 .filled {
@@ -25,7 +26,10 @@ h1{
 }
 
 .canvas{
-  width: fit-content;
+  flex-direction: column;
+  display: flex;
+  width: 600px;
+  height: 600px;
   margin: 0 auto;
 }
 
